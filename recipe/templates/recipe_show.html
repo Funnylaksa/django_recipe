@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+<style>p.indent{ padding-left: 1.8em }</style>
+<style>a.indent{ padding-left: 1.8em }</style>
+
+{% block content %}
+<form method='POST'> {% csrf_token %}
+<a name='edit' class="btn btn-primary" href="/recipe/{{ object.id }}/edit">Edit</a>
+<a name='delete' class="btn btn-primary" href="/recipe/{{ object.id }}/delete">Delete</a>
+</form>
+
+<form method='POST'> {% csrf_token %}
+<a style="float:right" name='next' class="btn btn-primary" href="/recipe/{{ next_obj.id }}">Next</a>
+<a style="float:right" name='previous' class="btn btn-primary" href="/recipe/{{ prev_obj.id }}">Previous</a>
+</form>
+<br>
+
+<h1> {{ object.title }} </h1>
+<img src="{{ object.picture.url }}" width="800">
+
+<br><br><br>
+<h3 class="indent"> Steps </h3>
+<p> {{ object.steps }} </p>
+
+
+
+
+{% endblock %}
