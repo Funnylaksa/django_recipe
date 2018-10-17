@@ -25,7 +25,7 @@ SECRET_KEY = 'y95=6myasa@zk$jyr6)ofp&-))qbz2ef54*4e-g(sp-a-5f@7r'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.200', '119.74.153.63']
+ALLOWED_HOSTS = ['192.168.1.200', 'ukrecipediary.ddns.net', '192.168.1.107']
 
 
 # Application definition
@@ -56,13 +56,14 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'django_recipe.urls'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/'
+MEDIA_URL = '/media/'
+APPEND_SLASH = True
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        #'DIRS': ['os.path.join(BASE_DIR)', 'templates'],
-        'DIRS': ['/home/ivan/Desktop/django_recipe/src/templates', 'templates'],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        #'DIRS': ['/home/ivan/Desktop/django_recipe/src/templates', 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -1,0 +1,9 @@
+{% extends 'base_diary.html' %}
+
+{% block content %}
+<h1> List </h1>
+
+{% for object in object_list %}
+<p> {{ object.id }} - <a href='{{ object.get_absolute_url }}'> {{ object.title }} </a> {{ object.date }}</p>
+{% endfor %}
+{% endblock %}

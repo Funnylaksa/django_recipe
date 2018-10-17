@@ -1,0 +1,9 @@
+{% extends 'base_diary.html' %}
+
+{% block content %}
+<h5> Please fill in diary details </h5>
+  <form method='POST' action ='.'  > {% csrf_token %}
+    {{ form.as_p }}
+    <input type ='submit' value='save' class ="btn btn-success"/>
+  </form>
+{% endblock %}

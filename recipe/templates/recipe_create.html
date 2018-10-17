@@ -3,7 +3,7 @@
 {% block content %}
 <h5> Please fill in recipe details </h5>
   <form method='POST' enctype="multipart/form-data" > {% csrf_token %}
-      {{ form.as_p }}
-      <input type='submit' value='Save' class ="btn btn-success" />
+    {{ form.as_p }}
+    <input type='submit' value='Save' class ="btn btn-success" />
   </form>
 {% endblock %}
